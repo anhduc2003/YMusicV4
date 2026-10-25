@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.13
+
+### NEW
+- Downloads: "Tiếp tục tất cả" giờ thử lại cả các bản tải xuống bị lỗi, không chỉ các bản đang tạm dừng, và nút này hiện ra ngay cả khi chỉ còn bản lỗi.
+- Hẹn giờ ngủ: thêm mức 120 phút vào các mức chọn nhanh.
+- Bộ nhớ đệm phát: thêm mức 20 GB vào Cài đặt → Bộ nhớ đệm phát.
+
+### IMPROVED
+- Tiếng Việt: bổ sung 3 chuỗi còn thiếu (tên app, nhãn PREMIUM, mục Danh mục giao diện) để giao diện không còn lẫn tiếng Anh ở các chỗ đó.
+
 ## 4.0.12
 
 ### NEW
