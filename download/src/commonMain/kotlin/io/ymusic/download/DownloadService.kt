@@ -247,11 +247,11 @@ class DownloadService(
         }
     }
 
-    /** Global resume: re-queue every paused task and run up to [maxConcurrent] of them. */
+    /** Global resume: re-queue every paused or failed task and run up to [maxConcurrent] of them. */
     fun resumeAll() {
         command(null) {
             gate.withLock { queuePaused = false }
-            store.all().filter { it.state == DownloadState.PAUSED }.forEach { setState(it.id, DownloadState.QUEUED) }
+            store.all().filter { it.state == DownloadState.PAUSED || it.state == DownloadState.FAILED }.forEach { setState(it.id, DownloadState.QUEUED) }
             fillSlots()
         }
     }
