@@ -62,7 +62,7 @@ private const val MIN_MINUTES = 5
 private const val MAX_MINUTES = 180
 private const val STEP_MINUTES = 5
 private const val EXTEND_MINUTES = 5
-private val PresetMinutes = listOf(15, 30, 45, 60, 90)
+private val PresetMinutes = listOf(15, 30, 45, 60, 90, 120)
 private val ArmedIconSize = 20.dp
 
 /** The Now Playing bed icon (accent while armed) opening [SleepTimerDialog]. */
