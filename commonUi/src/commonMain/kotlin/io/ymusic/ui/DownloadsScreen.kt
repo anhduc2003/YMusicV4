@@ -159,6 +159,7 @@ fun DownloadsScreen(graph: AppGraph, coordinator: PlaybackCoordinator) {
     val shown = ordered.filter { filter.matches(it.state) }
     val running = visible.any { it.state.isActive }
     val paused = visible.any { it.state == DownloadState.PAUSED }
+    val failed = visible.any { it.state == DownloadState.FAILED }
 
     // Report scroll into the shell's ScrollHost so the shared app bar lifts on scroll, like Library/Discover.
     val gridState = rememberLazyGridState()
@@ -269,7 +270,7 @@ fun DownloadsScreen(graph: AppGraph, coordinator: PlaybackCoordinator) {
             }
         }
 
-        if (running || paused) {
+        if (running || paused || failed) {
             ExtendedFloatingActionButton(
                 onClick = { if (running) service.pauseAll() else service.resumeAll() },
                 text = { Text(stringResource(if (running) Res.string.downloads_pause_all else Res.string.downloads_resume_all)) },
